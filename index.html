@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root{
+      --primary-color: hsl(215, 51%, 70%);
+      --secondary-color: hsl(178, 100%, 50%);
+      --main-card-bg: hsl(217, 54%, 11%);
+      --card-bg: hsl(216, 50%, 16%);
+      --line: hsl(215, 32%, 27%);
+      --white: hsl(0, 0%, 100%);
+    }
+
+    body{
+      display: grid;
+      font-family: 'Outfit';
+      background-color: var(--main-card-bg);
+      place-items: center;
+    }
+
+    p{
+      font: 18px;
+    }
+
+    img{
+      display: block;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+    .attribution { color: var(--secondary-color); font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    .bold { font-weight: 600;}
+    .light { font-weight: 300;}
+
+    .card{
+      margin: 2em 0px;
+      background-color: var(--card-bg);
+      padding: 1em;
+      border-radius: 15px;
+      display: flex;
+      flex-flow: column;
+      max-width: 45vh;
+      justify-content: center;
+      box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-img{
+      position: relative;
+      background-color: var(--secondary-color);
+      border-radius: 7px;
+      cursor: pointer;
+    }
+
+    .view{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: 250ms;
+    }
+
+    .img{
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 5px;
+      position: relative;
+      transition: 250ms;
+    }
+
+    .card-img:hover .view{
+      opacity: 1;
+    }
+
+    .card-img:hover .img{
+      opacity: 0.5;
+    }
+
+    .card-title{
+      color: var(--white);
+      cursor: pointer;
+      transition: 250ms;
+      margin-right: auto;
+    }
+    .card-title:hover{
+      color: var(--secondary-color);
+    }
+
+    .card-para{
+      color: var(--primary-color);
+    }
+
+    .card-stats{
+      padding: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      padding: 0.8em 0;
+      clear: both;
+    }
+
+    .eth-val{
+      color: var(--secondary-color);
+    }
+
+    .eth-time{
+      color: var(--primary-color);
+    }
+
+    .line{
+      background-color: var(--line);
+      height: 2px;
+      width: 100%;
+      border: none;
+    }
+
+    .card-credit{
+      color: var(--white);
+      font-weight: 300;
+      padding: 0.5em 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .credit-img{
+      border-radius: 100px;
+      border: 1px solid var(--white);
+      width: 10%;
+      margin-right: 1em;
+      display: block;
+    }
+
+    .creator-name{
+      transition: 250ms;
+      margin-left: 5px;
+    }
+
+    .creator-name:hover{
+      cursor: pointer;
+      color: var(--secondary-color);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="card">
+      <div class="card-img">
+        <img class="img" src="./images/image-equilibrium.jpg"/>
+        <img class="view" src="./images/icon-view.svg"/>
+      </div>
+
+      <div class="card-info">
+        <div class="card-text">
+          <p class="card-title bold">Equilibrium #3429</p>
+          <p class="card-para light">Our Equilibrium collection promotes balance and calm.</p>
+        </div>
+
+        <div class="card-stats">
+            <div class="eth-val"><img style="margin-right: 0.5em; float: left;" src="./images/icon-ethereum.svg"/><span>0.041 ETH</span></div>
+            <div class="eth-time"><img style="margin-right: 0.5em;float: left;"src="./images/icon-clock.svg"/><span>3 days left</span></div>
+        </div>
+      </div>
+
+      <hr class="line"/>
+
+      <div class="card-credit">
+        <img class="credit-img" src="./images/image-avatar.png"/><span style="color: var(--primary-color);">Creation of</span> <a class="creator-name">Jules Wyvern</a>
+      </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://www.frontendmentor.io/profile/Surfitikate">Surfitikate</a>.
+  </div>
+</body>
+</html>
